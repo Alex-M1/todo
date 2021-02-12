@@ -38,9 +38,9 @@ function TodoListItem(props: IProps) {
     <li className={`todo-list-item list-group-item ${done} ${important}`} >
       <ItemName {...itemNameProps} />
       <span className='todo-list-item-buttons'>
-        <ItemListButton config='edit' itemAction={onEditClick} />
-        <ItemListButton config='important' id={id} itemAction={setImportant} />
-        <ItemListButton config='delete' id={id} itemAction={deleteItem} />
+        <ItemListButton config='edit' role='edit' itemAction={onEditClick} />
+        <ItemListButton config='important' role='important' id={id} itemAction={setImportant} />
+        <ItemListButton config='delete' role='delete' id={id} itemAction={deleteItem} />
       </span>
     </li>
   )

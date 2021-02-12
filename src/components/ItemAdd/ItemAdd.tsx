@@ -17,11 +17,12 @@ function ItemAdd({ inputValue, setTodoValue, setData, t }: IProps) {
   return (
     <form className='add-form' onSubmit={onButtonClick}>
       <input type='text'
+        role='add-input'
         className='form-control'
         onChange={inputChanged}
         value={inputValue}
         placeholder={t('writeName')} />
-      <button className='btn btn-outline-primary'>{t("add-todo")}</button>
+      <button role='add-btn' className='btn btn-outline-primary'>{t("add-todo")}</button>
     </form>
   )
 }

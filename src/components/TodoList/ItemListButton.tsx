@@ -2,7 +2,7 @@ import React from 'react'
 import { IDeleteItem, ISetImportant } from '../../redux'
 
 
-function ItemListButton({ config, id, itemAction }: IProps) {
+function ItemListButton({ config, id, role, itemAction }: IProps) {
   const onButtonClick = () => {
     itemAction(id)
   }
@@ -26,7 +26,7 @@ function ItemListButton({ config, id, itemAction }: IProps) {
   }
 
   return (
-    <button className={`${buttonConfig.button} btn-sm`} onClick={onButtonClick}>
+    <button className={`${buttonConfig.button} btn-sm`} onClick={onButtonClick} role={role}>
       <i className={`fa ${buttonConfig.icon}`} />
     </button>
   )
@@ -37,5 +37,6 @@ export default ItemListButton
 interface IProps {
   config: 'important' | 'delete' | 'edit'
   id?: string
+  role: string
   itemAction: (id?: string) => ISetImportant | IDeleteItem | void
 }
